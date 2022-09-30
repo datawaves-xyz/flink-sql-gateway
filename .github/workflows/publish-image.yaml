@@ -6,7 +6,7 @@ on:
       - datawaves
 
 jobs:
-  build-n-publish-to-s3:
+  build-n-publish-to-ecr:
     runs-on: ubuntu-latest
 
     steps:
