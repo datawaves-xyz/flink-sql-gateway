@@ -25,9 +25,9 @@
 #==============================================================================
 server:
   # The address that the gateway binds itself.
-  bind-address: 127.0.0.1
+  bind-address: 0.0.0.0
   # The address that should be used by clients to connect to the gateway.
-  address: 127.0.0.1
+  address: 0.0.0.0
   # The port that the client connects to.
   port: 8083
   # The jvm args for SQL gateway process,

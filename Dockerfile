@@ -7,6 +7,7 @@ EXPOSE 8083
 RUN mkdir flink-sql-gateway
 COPY target/flink-sql-gateway-0.3-SNAPSHOT-bin/flink-sql-gateway-0.3-SNAPSHOT/ flink-sql-gateway/
 COPY sql-gateway.yaml flink-sql-gateway/conf/sql-gateway-defaults.yaml
+RUN mkdir flink-sql-gateway/log
 
 COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
