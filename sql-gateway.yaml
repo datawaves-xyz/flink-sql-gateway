@@ -98,12 +98,10 @@ functions: [] # empty list
 
 # Define catalogs here.
 
-catalogs: [] # empty list
-# A typical catalog definition looks like:
-#  - name: myhive
-#    type: hive
-#    hive-conf-dir: /opt/hive_conf/
-#    default-database: ...
+catalogs:
+  - name: hive
+    type: hive
+    hive-conf-dir: /opt/flink/hive-metastore
 
 #==============================================================================
 # Modules
