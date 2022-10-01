@@ -6,4 +6,4 @@ kubernetes.cluster-id: $2
 kubernetes.namespace: $3
 execution.target: kubernetes-session" > conf/flink-conf.yaml
 
-./flink-sql-gateway/bin/sql-gateway.sh
+./flink-sql-gateway/bin/sql-gateway.sh --jar flink-sql-gateway/lib/flink-connector-kafka_2.12-1.12.7.jar

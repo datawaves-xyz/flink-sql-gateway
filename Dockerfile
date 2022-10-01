@@ -12,4 +12,7 @@ RUN mkdir flink-sql-gateway/log
 COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
+# Download dependency jar
+RUN curl -s "https://repo1.maven.org/maven2/org/apache/flink/flink-connector-kafka_2.12/1.12.7/flink-connector-kafka_2.12-1.12.7.jar" -o "/opt/flink/flink-sql-gateway/lib/flink-connector-kafka_2.12-1.12.7.jar"
+
 ENTRYPOINT [ "./entrypoint.sh" ]
