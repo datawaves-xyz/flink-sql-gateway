@@ -18,14 +18,22 @@ RUN chmod +x entrypoint.sh
 
 RUN mkdir hive-metastore
 
-# Download dependency jar
+## Kafka
 RUN curl -s "https://repo1.maven.org/maven2/org/apache/flink/flink-connector-kafka_$SCALA_VERSION/$FLINK_VERSION/flink-connector-kafka_$SCALA_VERSION-$FLINK_VERSION.jar"  \
     -o "/opt/flink/flink-sql-gateway/lib/flink-connector-kafka_$SCALA_VERSION-$FLINK_VERSION.jar"
 RUN curl -s "https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.4.1/kafka-clients-2.4.1.jar" \
     -o "/opt/flink/flink-sql-gateway/lib/kafka-clients-2.4.1.jar"
 RUN curl -s "https://repo1.maven.org/maven2/org/apache/flink/flink-connector-hive_$SCALA_VERSION/$FLINK_VERSION/flink-connector-hive_$SCALA_VERSION-$FLINK_VERSION.jar" \
     -o "/opt/flink/flink-sql-gateway/lib/flink-connector-hive_$SCALA_VERSION-$FLINK_VERSION.jar"
+
+## Hive metastore
 RUN curl -s "https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/$HIVE_HADOOP_VERSION/hadoop-mapreduce-client-core-$HIVE_HADOOP_VERSION.jar" \
     -o "/opt/flink/flink-sql-gateway/lib/hadoop-mapreduce-client-core-$HIVE_HADOOP_VERSION.jar"
+
+## Jdbc
+RUN curl -s "https://repo1.maven.org/maven2/org/apache/flink/flink-connector-jdbc_$SCALA_VERSION/$FLINK_VERSION/flink-connector-jdbc_$SCALA_VERSION-$FLINK_VERSION.jar" \
+    -o "/opt/flink/flink-sql-gateway/lib/flink-connector-jdbc_$SCALA_VERSION-$FLINK_VERSION.jar"
+RUN curl -s "https://repo1.maven.org/maven2/org/postgresql/postgresql/42.4.0/postgresql-42.4.0.jar" \
+    -o "/opt/flink/flink-sql-gateway/lib/postgresql-42.4.0.jar"
 
 ENTRYPOINT [ "./entrypoint.sh" ]

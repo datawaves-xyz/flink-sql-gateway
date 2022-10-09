@@ -47,4 +47,6 @@ echo "<configuration>
   --jar flink-sql-gateway/lib/flink-connector-kafka_2.12-1.12.7.jar \
   --jar flink-sql-gateway/lib/kafka-clients-2.4.1.jar \
   --jar flink-sql-gateway/lib/flink-connector-hive_2.12-1.12.7.jar \
-  --jar flink-sql-gateway/lib/hadoop-mapreduce-client-core-2.7.5.jar
+  --jar flink-sql-gateway/lib/hadoop-mapreduce-client-core-2.7.5.jar \
+  --jar flink-sql-gateway/lib/flink-connector-jdbc_2.12-1.12.7.jar \
+  --jar flink-sql-gateway/lib/postgresql-42.4.0.jar
