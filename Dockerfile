@@ -35,5 +35,7 @@ RUN curl -s "https://repo1.maven.org/maven2/org/apache/flink/flink-connector-jdb
     -o "/opt/flink/flink-sql-gateway/lib/flink-connector-jdbc_$SCALA_VERSION-$FLINK_VERSION.jar"
 RUN curl -s "https://repo1.maven.org/maven2/org/postgresql/postgresql/42.4.0/postgresql-42.4.0.jar" \
     -o "/opt/flink/flink-sql-gateway/lib/postgresql-42.4.0.jar"
+RUN curl -s "https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar" \
+    -o "/opt/flink/flink-sql-gateway/lib/mysql-connector-java-8.0.30.jar"
 
 ENTRYPOINT [ "./entrypoint.sh" ]
